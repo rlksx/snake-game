@@ -9,6 +9,9 @@ namespace snake_game
         {
             this.Width = 90;
             this.Height = 24;
+
+            // tirando visibilidade do cursor
+            Console.CursorVisible = false;
         }
 
         public void drawCanvas()
@@ -42,10 +45,10 @@ namespace snake_game
             }
             Console.Write(" +");
 
-            this.draHeaderCanvas();
+            this.drawHeaderCanvas();
         }
 
-        public void draHeaderCanvas()
+        public void drawHeaderCanvas()
         {
             // criando header
             Console.SetCursorPosition(0, 4);
