@@ -8,6 +8,7 @@ namespace snake_game {
         {
             var canvas = new Canvas();
             var snake = new Snake();
+            var food = new Food();
 
 
             bool finished = false;
@@ -15,6 +16,7 @@ namespace snake_game {
             {
                 canvas.drawCanvas();
                 snake.Input();
+                food.drawFood();
                 snake.drawSnake();
                 snake.direction();
                 snake.moveSnake();
