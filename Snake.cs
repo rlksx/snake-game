@@ -12,13 +12,15 @@ namespace snake_game
 
         public int x { get; set; }
         public int y { get; set; }
+        public int score { get; set; }
 
-        List<Position> snakeBody;
+        public List<Position> snakeBody {get; set;}
 
         public Snake()
         {
             this.x = 24;
-            this.y = 10;
+            this.y = 18;
+            this.score = 0;
 
             snakeBody = new List<Position>();
             snakeBody.Add(new Position(x, y));
@@ -81,7 +83,12 @@ namespace snake_game
 
             snakeBody.Add(new Position(x, y));
             snakeBody.RemoveAt(0);
-            Thread.Sleep(80);
+            if(dir == 'l' || dir == 'r')
+            {
+                Thread.Sleep(80);
+            } else {
+                Thread.Sleep(120);
+            }
         }
 
         public void eat(Position food, Food f)
@@ -93,6 +100,7 @@ namespace snake_game
             {
                 snakeBody.Add(new Position(x, y));
                 f.foodNewLocation();
+                score ++;
             }
         }
 

@@ -14,7 +14,7 @@ namespace snake_game
             Console.CursorVisible = false;
         }
 
-        public void drawCanvas()
+        public void drawCanvas(int width, int height)
         {
             Console.Clear();
 
@@ -56,7 +56,7 @@ namespace snake_game
             Console.Write("+ ");
             for (int i = 0; i < Width - 2; i++)
                 Console.Write("=");
-                
+
             Console.Write(" +");
 
             // inserindo titulo no header
