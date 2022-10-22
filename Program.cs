@@ -9,13 +9,16 @@ namespace snake_game {
             var canvas = new Canvas();
             var snake = new Snake();
 
-            bool finished = false;
 
+            bool finished = false;
             while(!finished)
             {
                 canvas.drawCanvas();
+                snake.Input();
                 snake.drawSnake();
-                Console.Read();
+                snake.direction();
+                snake.moveSnake();
+                // Console.Read();
             }
         }
     }

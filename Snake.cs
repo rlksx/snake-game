@@ -5,7 +5,10 @@ namespace snake_game
     public class Snake
     {
         ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
+
+        // obs: aspas simples delimita um char; 
         char key = 'w'; 
+        char dir = 'u';
 
         public int x { get; set; }
         public int y { get; set; }
@@ -23,11 +26,10 @@ namespace snake_game
 
         public void drawSnake()
         {
-
-            foreach (var item in snakeBody)
+            foreach (Position pos in snakeBody)
             {
-                Console.SetCursorPosition(x, y);
-                Console.Write("⬛");   
+                Console.SetCursorPosition(pos.x, pos.y);
+                Console.Write("0");   
             }
         }
 
@@ -36,8 +38,51 @@ namespace snake_game
             if(Console.KeyAvailable)
             {   
                 // KeyChar() => informa pressionamentos de teclas em tempo de execução;
+                keyInfo = Console.ReadKey(true);
                 key = keyInfo.KeyChar;
             }
+        }
+
+        public void direction()
+        {
+            // u = up | d = down
+            // r = right | l = left
+            if(key == 'w' && dir != 'd')
+            {
+                dir = 'u';
+            } else if(key == 's' && dir != 'u')
+            {
+                dir = 'd';
+            } else if(key == 'd' && dir != 'l')
+            {
+                dir = 'r';
+            } else if (key == 'a' && dir != 'r')
+            {
+                dir = 'l';
+            }
+
+        }
+
+        public void moveSnake()
+        {
+            if(dir == 'u')
+            {
+                y--;
+            } else if(dir == 'd')
+            {
+                y++;
+            } else if(dir == 'r')
+            {
+                x++;
+            } else if(dir == 'l')
+            {
+                x--;
+            }
+
+            snakeBody.Add(new Position(x, y));
+            // snakeBody.RemoveAt(0);
+            Thread.Sleep(150);
+        
         }
     }
 }

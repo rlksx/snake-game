@@ -55,9 +55,8 @@ namespace snake_game
 
             Console.Write("+ ");
             for (int i = 0; i < Width - 2; i++)
-            {
                 Console.Write("=");
-            }
+                
             Console.Write(" +");
 
             // inserindo titulo no header
