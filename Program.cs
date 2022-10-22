@@ -20,6 +20,7 @@ namespace snake_game {
                 snake.drawSnake();
                 snake.direction();
                 snake.moveSnake();
+                snake.eat(food.foodLocation(), food);
                 // Console.Read();
             }
         }

@@ -19,9 +19,12 @@ namespace snake_game
             Console.Write("%");
         }
 
-        public Position foodLocation()
+        public Position foodLocation() => foodPosition;
+
+        public void foodNewLocation()
         {
-            return foodPosition;
+            this.foodPosition.x = rnd.Next(5, canvas.Width - 2);
+            this.foodPosition.y = rnd.Next(5, canvas.Height);
         }
     }
 }

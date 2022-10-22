@@ -80,15 +80,24 @@ namespace snake_game
             }
 
             snakeBody.Add(new Position(x, y));
-            // snakeBody.RemoveAt(0);
+            snakeBody.RemoveAt(0);
             Thread.Sleep(80);
         }
 
-        public void snakeGrow(Position food)
+        public void eat(Position food, Food f)
         {
             Position sn = snakeBody[snakeBody.Count - 1];
 
-            if
+            if(sn.x == food.x && sn.y == food.y)
+            {
+                snakeBody.Add(new Position(x, y));
+                f.foodNewLocation();
+            }
+        }
+
+        public void isDead()
+        {
+            
         }
     }
 }
