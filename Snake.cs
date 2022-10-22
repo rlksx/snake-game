@@ -85,10 +85,11 @@ namespace snake_game
         }
 
         public void eat(Position food, Food f)
-        {
-            Position sn = snakeBody[snakeBody.Count - 1];
+        {   
+            // posição da cbç da cobra;
+            Position head = snakeBody[snakeBody.Count - 1];
 
-            if(sn.x == food.x && sn.y == food.y)
+            if(head.x == food.x && head.y == food.y)
             {
                 snakeBody.Add(new Position(x, y));
                 f.foodNewLocation();
@@ -97,7 +98,28 @@ namespace snake_game
 
         public void isDead()
         {
-            
+            // posição da cbç da cobra;
+            Position head = snakeBody[snakeBody.Count - 1];
+
+            for (int i = 0; i < snakeBody.Count - 2; i++)
+            {
+                Position sb = snakeBody[i];
+                if (head.x == sb.x && head.y == sb.y)
+                {
+                    throw new SnakeException("Você se enrolou!");
+                }
+            }
+        }
+
+        public void hitWall(Canvas canvas)
+        {
+            // cbç da cobra dnv
+            Position head = snakeBody[snakeBody.Count - 1];
+
+            if(head.x >= canvas.Width || head.x <= 0 || head.y >= canvas.Height || head.y <= 0)
+            {
+                throw new SnakeException("Você foi longe de mais!");
+            }
         }
     }
 }
