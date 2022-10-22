@@ -7,8 +7,8 @@ namespace snake_game
         ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
 
         // obs: aspas simples delimita um char; 
-        char key = 'w'; 
-        char dir = 'u';
+        public char key = 'p'; 
+        public char dir = 'p';
 
         public int x { get; set; }
         public int y { get; set; }
@@ -20,7 +20,7 @@ namespace snake_game
         {
             this.x = 24;
             this.y = 18;
-            this.score = 0;
+            this.score = 10;
 
             snakeBody = new List<Position>();
             snakeBody.Add(new Position(x, y));
@@ -28,7 +28,7 @@ namespace snake_game
 
         public void drawSnake()
         {
-            foreach (Position pos in snakeBody)
+            foreach (var pos in snakeBody)
             {
                 Console.SetCursorPosition(pos.x, pos.y);
                 Console.Write("0");   
@@ -85,7 +85,7 @@ namespace snake_game
             snakeBody.RemoveAt(0);
             if(dir == 'l' || dir == 'r')
             {
-                Thread.Sleep(80);
+                Thread.Sleep(60);
             } else {
                 Thread.Sleep(120);
             }
@@ -124,7 +124,7 @@ namespace snake_game
             // cbç da cobra dnv
             Position head = snakeBody[snakeBody.Count - 1];
 
-            if(head.x >= canvas.Width || head.x <= 0 || head.y >= canvas.Height || head.y <= 0)
+            if(head.x >= canvas.Width + 1 || head.x <= 0 || head.y >= canvas.Height + 1 || head.y <= 4)
             {
                 throw new SnakeException("Você foi longe de mais!");
             }

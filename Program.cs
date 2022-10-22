@@ -14,10 +14,14 @@ namespace snake_game {
             while(!finished)
             {
                 try{
-                    canvas.drawCanvas(90, 24);
+                    canvas.drawCanvas();
 
-                    Console.SetCursorPosition(canvas.Width, canvas.Height);
-                    Console.Write($"{snake.score}");
+                    Console.SetCursorPosition(canvas.Width-1, canvas.Height);
+                    if(snake.score > 9) {
+                        Console.Write($"{snake.score}");
+                    } else{
+                    Console.Write($"0{snake.score}");
+                    }
 
                     snake.Input();
                     food.drawFood();
@@ -32,7 +36,7 @@ namespace snake_game {
                     Console.Clear();
                     Console.Write(e.Message);
                     
-                    Console.Write("Começar de novo (S/N)");
+                    Console.Write("\nDeseja começar de novo? (S/N) : ");
                     char c = char.Parse(Console.ReadLine());
 
                     switch(c)

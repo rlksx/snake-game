@@ -14,7 +14,7 @@ namespace snake_game
             Console.CursorVisible = false;
         }
 
-        public void drawCanvas(int width, int height)
+        public void drawCanvas()
         {
             Console.Clear();
 
