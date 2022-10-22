@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using snake_game_classes;
 
 namespace snake_game {
     class Program

@@ -1,4 +1,4 @@
-namespace snake_game
+namespace snake_game_classes
 {
     public class Canvas
     {
