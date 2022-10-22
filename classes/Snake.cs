@@ -19,7 +19,7 @@ namespace snake_game_classes
         {
             this.x = 24;
             this.y = 18;
-            this.score = 10;
+            this.score = 0;
 
             snakeBody = new List<Position>();
             snakeBody.Add(new Position(x, y));
