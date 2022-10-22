@@ -18,7 +18,7 @@ namespace snake_game_classes
         public Snake()
         {
             this.x = 24;
-            this.y = 18;
+            this.y = 12;
             this.score = 0;
 
             snakeBody = new List<Position>();

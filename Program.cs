@@ -44,9 +44,11 @@ namespace snake_game {
                     {
                         case 's':
                         case 'S': 
-                            snake.x = 22; 
-                            snake.y = 18;   
+                            snake.x = 24; 
+                            snake.y = 12;   
                             snake.score = 0;
+                            snake.dir = 'p';
+                            snake.key = 'p';
                             snake.snakeBody.RemoveRange(0, snake.snakeBody.Count - 1);
                         break;    
 
