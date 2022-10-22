@@ -8,7 +8,7 @@ namespace snake_game
         public Canvas()
         {
             this.Width = 90;
-            this.Height = 20;
+            this.Height = 24;
         }
 
         public void drawCanvas()
@@ -42,6 +42,26 @@ namespace snake_game
             }
             Console.Write(" +");
 
+            this.draHeaderCanvas();
+        }
+
+        public void draHeaderCanvas()
+        {
+            // criando header
+            Console.SetCursorPosition(0, 4);
+
+            Console.Write("+ ");
+            for (int i = 0; i < Width - 2; i++)
+            {
+                Console.Write("=");
+            }
+            Console.Write(" +");
+
+            // inserindo titulo no header
+            string text = "Snake Game by @rlksx";
+
+            Console.SetCursorPosition(Width/2 - text.Length/2, 2);
+            Console.Write(text);
         }
     }
 }
