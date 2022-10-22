@@ -14,14 +14,21 @@ namespace snake_game {
             bool finished = false;
             while(!finished)
             {
-                canvas.drawCanvas();
-                snake.Input();
-                food.drawFood();
-                snake.drawSnake();
-                snake.direction();
-                snake.moveSnake();
-                snake.eat(food.foodLocation(), food);
-                // Console.Read();
+                try{
+                    canvas.drawCanvas();
+                    snake.Input();
+                    food.drawFood();
+                    snake.drawSnake();
+                    snake.direction();
+                    snake.moveSnake();
+                    snake.eat(food.foodLocation(), food);
+                    snake.hitWall(canvas);
+                    snake.isDead();
+                } catch(SnakeException e) {
+                    Console.Clear();
+                    Console.Write(e.Message);
+                    finished = true;
+                }
             }
         }
     }
