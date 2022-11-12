@@ -9,9 +9,6 @@ namespace snake_game_classes
         {
             this.Width = 90;
             this.Height = 24;
-
-            // tirando visibilidade do cursor
-            Console.CursorVisible = false;
         }
 
         public void drawCanvas()

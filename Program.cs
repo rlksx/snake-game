@@ -11,6 +11,9 @@ namespace snake_game {
             var snake = new Snake();
             var food = new Food();
 
+            // tirando visibilidade do cursor
+            Console.CursorVisible = false;
+
             bool finished = false;
             while(!finished)
             {
@@ -56,7 +59,6 @@ namespace snake_game {
                         case 'N':
                             finished = true;
                         break;
-
                     }
                 }
             }
