@@ -17,7 +17,7 @@ namespace snake_game_classes
         public void drawCanvas()
         {
             Console.Clear();
-
+            
             // linha vertical 1
             Console.Write("+ ");
             for (int i = 0; i < Width - 2; i++)
